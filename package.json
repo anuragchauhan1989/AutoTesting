@@ -1,0 +1,39 @@
+{
+  "name": "jestcucumbertypescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/request": "^2.48.1",
+    "@types/request-promise": "^4.1.44",
+    "chromedriver": "^81.0.0",
+    "jest": "^24.8.0",
+    "jest-cucumber": "^2.0.11",
+    "jest-html-reporters": "^1.2.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "selenium-webdriver": "^3.6.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/request": "^2.48.1",
+    "@types/request-promise": "^4.1.44",
+    "@types/selenium-webdriver": "^4.0.11",
+    "jest": "^24.8.0",
+    "jest-cucumber": "^2.0.11",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.1"
+  },
+  "scripts": {
+    "test": "jest",
+    "features": "jest ./cucumber/step-definitions",
+    "test-watch": "test --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
