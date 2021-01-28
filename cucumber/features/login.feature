@@ -6,7 +6,5 @@ Feature: Login Feature
         Given Agent is on Login Page
         When Agent login with valid <emailId> and <password>
         Then Dashboard page opens up
-         Examples:
-            | emailid                  | password        |
-            | anurag.kumar@comm100.com | Jaspur@244712@  | 
+        
         

@@ -1,6 +1,7 @@
 {
   "enterUrl": "https://autoportal.comm100dev.io/",
   "browsers": ["chrome"],
-  "defaultTimeoutInterval": 3e5
+  "defaultTimeoutInterval": 3e5,
+  "selectorWaitUntilTime": 3e4
 
 }
