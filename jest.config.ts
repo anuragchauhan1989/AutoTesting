@@ -9,6 +9,9 @@ module.exports = {
   testMatch: [
     "**/*.step.ts"
   ],
+  transform: {
+    ".(ts|tsx)": "ts-jest"
+  },
   reporters: [
     "default",
     [

@@ -9,12 +9,12 @@ export interface Setting {
   navigate: DriverHelper;
 }
 
-export default (label: any, callback: any) => {
+export function myDefineFeature(feature: any, callback: any) {
   configs.browsers.forEach((browser) => {
     let setting: Setting;
     let driver: any;
-    const init = async () => {
-      const driver = await generateDriver(browser);
+    const init =  () => {
+      const driver =  generateDriver(browser);
       return {
         driver,
         setting: {
@@ -24,8 +24,8 @@ export default (label: any, callback: any) => {
       };
     };
 
-    defineFeature(label, async (test) => {
-      const resp = await init();
+    defineFeature(feature,(test) => {
+      const resp =  init();
       setting = resp.setting;
       driver = resp.driver;
 

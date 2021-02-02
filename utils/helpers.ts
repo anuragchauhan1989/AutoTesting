@@ -1,11 +1,11 @@
-import { Builder } from "selenium-webdriver";
+import {Builder, WebDriver} from "selenium-webdriver";
 require("selenium-webdriver/chrome");
 require("chromedriver");
 import configs from "../config.json";
 
-export const generateDriver = async (browser: string) => {
-  const driver = await new Builder().forBrowser(browser).build();
-  await driver.manage().window().maximize();
+export const generateDriver =  (browser: string) : WebDriver => {
+  const driver =  new Builder().forBrowser(browser).build();
+   driver.manage().window().maximize();
   return driver;
 };
 
