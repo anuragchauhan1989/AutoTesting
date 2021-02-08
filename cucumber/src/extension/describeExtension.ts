@@ -1,8 +1,8 @@
-import { generateDriver } from "../utils/helpers";
-import configs from "../config.json";
-import { Element } from "../elements/element";
-import { DriverHelper } from "../utils/navigate";
 import { defineFeature } from "jest-cucumber";
+import { generateDriver } from "../utils/helpers";
+import { DriverHelper } from "../utils/navigate";
+import configs from "..//..//..//config.json";
+import {Element} from "..//../src/pages/element";
 
 export interface Setting {
   selector: Element;
@@ -23,7 +23,7 @@ export function myDefineFeature(feature: any, callback: any) {
         },
       };
     };
-
+    debugger;
     defineFeature(feature,(test) => {
       const resp =  init();
       setting = resp.setting;
@@ -33,9 +33,9 @@ export function myDefineFeature(feature: any, callback: any) {
         await driver.get(configs.enterUrl);
       });
       afterEach(async () => {
-        if (driver) {
-          await driver.quit();
-        }
+        // if (driver) {
+        //   await driver.quit();
+        // }
       });
       callback(test, setting);
     });

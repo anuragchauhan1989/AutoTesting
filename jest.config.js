@@ -6,7 +6,7 @@ module.exports = {
     testEnvironment: "node",
     testTimeout: 3e5,
     testMatch: [
-        "**/*.step.ts"
+        "**/*routingCustomRules.step.ts"
     ],
     transform: {
         ".(ts|tsx)": "ts-jest"
@@ -21,7 +21,8 @@ module.exports = {
                 expand: true
             }
         ]
-    ]
+    ],
+    setupFiles: ['./jest-cucumber-config']
 };
 
 
