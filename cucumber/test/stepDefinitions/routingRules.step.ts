@@ -24,7 +24,9 @@ myDefineFeature(feature, (test: DefineScenarioFunctionWithAliases, setting: Sett
                 (await liveChatDashboard.ticketAndMessage(driver)).click();
                 await driver.sleep(5000);
                 (await ticketDashboard.settingMenu(driver)).click();
+                await driver.sleep(5000);
                 (await routingRules.routingRulesTrigger(driver)).click();
+                await driver.sleep(5000);
 
 
             });

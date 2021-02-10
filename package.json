@@ -26,7 +26,8 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "ts-jest": "^26.5.0",
-    "typescript": "^3.5.1"
+    "typescript": "^3.5.1",
+    "reflect-metadata": "^0.1.10"
   },
   "scripts": {
     "test": "jest",

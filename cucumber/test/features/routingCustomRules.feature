@@ -5,14 +5,15 @@ Feature: routingCustomRules
 Scenario Outline: Verify routing based on specific department
     Given Triggers are disabled
     And Auto-distribution is disabled
-    When Routing Rule to a specific department <department> is enabled
+    When Routing Rule to a specific department "<department>" is enabled
     And Ticket is created with no department assigned
-    Then Ticket department assignee should be changed to <department>
+    Then Ticket department assignee should be changed to "<department>"
     Examples:
   
     |department    |
-    |Depart        |
-    |Support Department|
+    |depart        |
+    |Support Dept  |
+
 
 # Scenario Outline: Verify routing based on specific agent
 #     Given Triggers are disabled

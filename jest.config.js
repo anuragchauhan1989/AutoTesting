@@ -6,7 +6,7 @@ module.exports = {
     testEnvironment: "node",
     testTimeout: 3e5,
     testMatch: [
-        "**/*routingCustomRules.step.ts"
+        "**/*routingRules2.step.ts"
     ],
     transform: {
         ".(ts|tsx)": "ts-jest"

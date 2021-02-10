@@ -1,9 +1,11 @@
+import {Key} from "selenium-webdriver";
 import {WebDriver} from "selenium-webdriver";
 import {loadFeature} from "jest-cucumber";
 import {DefineScenarioFunctionWithAliases} from "jest-cucumber/dist/src/feature-definition-creation";
 import {myDefineFeature, Setting} from "../../src/extension/describeExtension";
 import * as loginPage from "..//../src/pages/loginPage"
 import * as routingRules from "..//../src/pages/ticketingAndMessaging/settings/routingRules"
+import * as agentConsoleTicketing from "..//../src/pages/agentConsole/ticketingAndMessaging"
 
 
 const feature = loadFeature("./cucumber/test/features/routingCustomRules.feature");
@@ -29,17 +31,32 @@ myDefineFeature(feature, (test: DefineScenarioFunctionWithAliases, setting: Sett
                 driver.sleep(2000);
 
             });
-            when(/^Routing Rule to a specific department (.*) is enabled$/, async function () {
+            when(/^Routing Rule to a specific department (.*) is enabled$/, async function (department: string) {
                 debugger
-                (await routingRules.routeTickesBasedOnCustomerRules(driver)).click();
-                (await routingRules.department(driver)).click();
+                (await routingRules.routingTicketsToSpeDeptOrAgent(driver)).click();
+                debugger
+                (await routingRules.specificDept(driver)).click();
+                debugger
+                (await routingRules.departmentSelector(driver)).click();
+                (await routingRules.dd(driver,department.replace(/['"]+/g, ''))).click();
+                (await routingRules.saveButton(driver)).click();
+                driver.sleep(5000);
 
             });
             when(/^Ticket is created with no department assigned$/, async function () {
+                (await routingRules.launchAgentConsole(driver)).click();
+                driver.getAllWindowHandles().then(function (handles) {
+                driver.switchTo().window(handles[1]);
+            });
+                driver.sleep(240000);
+                (await agentConsoleTicketing.newBtn(driver)).click();
+                driver.sleep(5000);
+                (await agentConsoleTicketing.Email(driver)).click();
+                driver.sleep(5000);
 
             });
             then(/^Ticket department assignee should be changed to (.*)$/, async function () {
-                (await routingRules.saveButton(driver)).click();
+                
             });
         });
     }
