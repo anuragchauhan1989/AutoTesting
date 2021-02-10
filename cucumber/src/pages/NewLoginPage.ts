@@ -27,7 +27,7 @@ export class NewLoginPage extends BasePage {
       
       /**
        * if you want to login the main page,you can use this function instead of write the process in your main program
-       * @Author Bruce.xu
+       * @Author anurag
        * @param username:the email addr
        * @param passwd
        * @param driver WebDriver
